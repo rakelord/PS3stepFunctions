@@ -41,15 +41,16 @@ Function Connect-3stepAPI {
         "client_secret" = "$APISecret"
     }
 
-
     Write-Log -Message "Connecting to 3step API" -Active $LogToFile
-
+    Write-Host "Connection to 3step API"
+    
     $testConnection = Invoke-RestMethod -Method POST -Body $3stepAuthenticationHeader -Uri "$Url/access_token" -ContentType "application/x-www-form-urlencoded"
     $global:3stepAuthenticated = $false
     if ($testConnection){
         $global:3stepAuthenticated = $true
         $global:3stepUrl = $Url
-        Write-Log -Message "3step Authenticated: $3stepAuthenticated`n3step URL = $3stepUrl" -Active $LogToFile
+        Write-Log -Message "3step Authenticated: $3stepAuthenticated" -Active $LogToFile
+        Write-Log -Message "3step URL = $3stepUrl" -Active $LogToFile
         Write-Host "3step Authenticated: $3stepAuthenticated`n3step URL = $3stepUrl`nUse Header Connection Variable ="'$3stepAuthenticationHeader'
         $global:3stepAuthenticationHeader = @{Authorization = "$($testConnection.token_type) $($testConnection.access_token)"}
         return ""
