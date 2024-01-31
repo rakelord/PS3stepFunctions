@@ -12,7 +12,7 @@
     RootModule = 'PS3stepFunctions'
 
     # Version number of this module.
-    ModuleVersion = '1.0.5'
+    ModuleVersion = '1.0.6'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -95,7 +95,7 @@
         },
         @{
             ModuleName = "PSHelpFunctions"
-            RequiredVersion = "1.0.6"
+            RequiredVersion = "1.0.7"
             GUID = "772922b2-b239-49fd-b8fa-b9f60481d6b8"
         }
     )
