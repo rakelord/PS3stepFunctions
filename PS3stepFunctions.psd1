@@ -95,7 +95,7 @@
         },
         @{
             ModuleName = "PSHelpFunctions"
-            RequiredVersion = "1.0.7"
+            RequiredVersion = "1.0.8"
             GUID = "772922b2-b239-49fd-b8fa-b9f60481d6b8"
         }
     )
